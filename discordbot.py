@@ -18,9 +18,12 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-
 @bot.command()
 async def ping(ctx):
+    await ctx.send('pong')
+    
+@bot.command()
+async def wadai(ctx):
     #ひらがなと話題をリストからランダムに選ぶ
     hiragana = str(hiraganalist[random.randrange(len(hiraganalist))])
     wadai = str(wadailist[random.randrange(len(wadailist))])
@@ -28,10 +31,8 @@ async def ping(ctx):
     #ひらがなができなさそうな言葉なら選びなおす
     while hiragana in "ぁ-ぃ-ぅ-ぇ-ぉ-っ-ゃ-ゅ-ょ-ゎ-ゐ-ゑ-を-ん-げ-ず-ぜ-ば-べ-ぼ-ぴ-ぷ-ぺ-ざ":
         hiragana = str(hiraganalist[random.randrange(83)])
-        
-    pong = "「" + hiragana +"」から始まる" + wadai + "は？"
     
-    await ctx.send(pong)
+    await ctx.send("「" + hiragana +"」から始まる" + wadai + "は？")
 
 
 bot.run(token)
