@@ -28,6 +28,8 @@ async def neko(ctx):
     
 @bot.command()
 async def wadai(ctx):
+    #ひらがなと話題をリストからランダムに選ぶ
+    hiragana = str(hiraganalist[random.randrange(len(hiraganalist))])
     await ctx.send(hiragana)
 
 
