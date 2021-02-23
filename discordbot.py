@@ -20,7 +20,7 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def wadai(ctx):
+async def ping(ctx):
     #ひらがなと話題をリストからランダムに選ぶ
     hiragana = str(hiraganalist[random.randrange(len(hiraganalist))])
     wadai = str(wadailist[random.randrange(len(wadailist))])
